@@ -1,3 +1,3 @@
 # eDiet
 
-Dietry based on BMI school project
+Progressive Web App & school project conserning dietary requirements based on BMI 
