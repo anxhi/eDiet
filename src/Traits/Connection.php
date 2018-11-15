@@ -1,6 +1,6 @@
 <?php
 namespace eDiet\Traits;
-use PDO;
+use \PDO;
 
 trait Connection{
 

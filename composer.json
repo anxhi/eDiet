@@ -13,7 +13,9 @@
     "minimum-stability": "alpha",
 
     "require": {
-        "vlucas/phpdotenv": "^2.5"
+        "vlucas/phpdotenv": "^2.5",
+        "ext-pdo": "*",
+        "php": ">=7.0"
     },
 
     "scripts":{

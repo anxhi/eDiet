@@ -12,7 +12,7 @@ class Router{
 
     /**
      * @return mixed
-     * Handle the traffic comming from the registered routes
+     * Handle the traffic coming from the registered routes
      */
 
     public static function handleTraffic(){
@@ -27,13 +27,13 @@ class Router{
             }
         }
 
-        return static::prepareRoute($compounds)->applyMiddleware()->run();
+        return static::prepareRoute($compounds)->applyMiddleware()->direct();
     }
 
     /**
      * @param string $routeName
      * @param $callback
-     * Register incoming Get requests
+     * Register incoming GET requests
      */
 
     public static function get(string $routeName, $callback){
@@ -43,7 +43,7 @@ class Router{
     /**
      * @param string $routeName
      * @param $callback
-     * Register incoming Get requests
+     * Register incoming POST requests
      */
 
     public static function post(string $routeName, $callback){
@@ -99,7 +99,7 @@ class Router{
      * @return mixed
      */
 
-    public function run(){
+    public function direct(){
         if(method_exists($this->controller,$this->method)){
             return $this->wildcard ?
                 $this->controller->{$this->method}() :
