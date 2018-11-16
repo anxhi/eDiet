@@ -1,0 +1,32 @@
+{
+    "name": "eDiet",
+    "description": "eDiet",
+    "type": "project",
+
+    "authors": [
+        {
+            "name": "Bernard Kllogjri",
+            "email": "bernard@kllogjri.com",
+            "homepage": "http://www.kllogjri.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+
+    "require": {
+        "vlucas/phpdotenv": "^2.5",
+        "ext-pdo": "*",
+        "php": ">=7.0"
+    },
+
+    "scripts":{
+        "post-create-project-cmd": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
+    },
+
+    "autoload":{
+        "classmap":[
+            "./"
+        ]
+    }
+}
