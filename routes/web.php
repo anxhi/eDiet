@@ -17,10 +17,5 @@ use eDiet\Router as Route;
 
 Route::get('/','MainController@index');
 Route::get('/test',function(){dd('IT works');});
-Route::get('/profile',function(){
-  return view('profile');
-});
-Route::get('/home',function(){
-  return view('home');
-});
+Route::get('/profile','MainController@profile');
 Route::get('/test/{message}',function($message){dd('Hello '.$message);});
