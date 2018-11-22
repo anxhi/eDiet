@@ -1,9 +1,13 @@
 
   $(".menubutton").on("click",function(){
     $(this).find("#top").toggleClass("openedTop")
-    $(this).find("#bottom").toggleClass("openedBottom") 
+    $(this).find("#bottom").toggleClass("openedBottom")
+    $(".menu").toggleClass("openedMenu")
+     
   });
 
-  $(".menubutton").on("hover",function(){
-    $(this).assClass("hovercircle")
+  $(".menubutton").hover(function(){
+    $(this).find("#hover").toggleClass("hovercircle")
   });
+
+ 

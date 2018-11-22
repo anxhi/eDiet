@@ -10,10 +10,27 @@
 </div>
 <div id="bottom" class="buttonelement">
 </div>
-<div class="hovercircle">
+<div id="hover">
+</div>
 </div>
 
+<div id="sidemenu" class="menu">
+
+    <div class="menutext">
+        eDiet Menu
 </div>
+<div class="menulist">
+    <ul>
+        <li>
+            menu1
+</li>
+<li>
+    menu2
+</li>
+</ul>
+
+</div>
+
 
 
 
