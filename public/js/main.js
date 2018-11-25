@@ -2,12 +2,11 @@
   $(".menubutton").on("click",function(){
     $(this).find("#top").toggleClass("openedTop")
     $(this).find("#bottom").toggleClass("openedBottom")
-    $(".menu").toggleClass("openedMenu")
-     
+    $("#main").toggleClass("opened")
   });
 
-  $(".menubutton").hover(function(){
-    $(this).find("#hover").toggleClass("hovercircle")
-  });
+  // $(".menubutton").hover(function(){
+  //   $(this).find("#hover").toggleClass("hovercircle")
+  // });
 
  

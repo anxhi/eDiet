@@ -1,3 +1,3 @@
 # eDiet
 
-Progressive Web App & school project conserning dietary requirements based on BMI 
+Progressive Web App & school project concerning dietary requirements based on BMI 
