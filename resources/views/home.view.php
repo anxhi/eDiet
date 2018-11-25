@@ -1,6 +1,6 @@
 <?php partials('partials.header'); ?>
 
-    <div id="content"></div>
-
+    <h1 class="text-center">Home</h1>
+        
 <?php partials('partials.scripts'); ?>
 <?php partials('partials.footer'); ?>
