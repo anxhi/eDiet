@@ -102,8 +102,8 @@ class Router{
     public function direct(){
         if(method_exists($this->controller,$this->method)){
             return $this->wildcard ?
-                $this->controller->{$this->method}() :
-                $this->controller->{$this->method}($this->wildcard);
+                $this->controller->{$this->method}($this->wildcard) :
+                $this->controller->{$this->method}();
         }
         throw new \Error("Method {$this->method} on controller {$this->controller} does not exist");
     }

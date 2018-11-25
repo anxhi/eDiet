@@ -9,15 +9,14 @@
     <div class="menubutton">
         <div id="top" class="buttonelement"></div>
         <div id="bottom" class="buttonelement"></div>
-        <!-- <div id="hover"></div> -->
     </div>
     <div class="menutext">
         eDiet Menu
     </div>
     <div class="menulist">
         <ul>
+            <li><a href="/">Home</a></li>
             <li><a href="/profile">Profile</a></li>
-            <li>menu2</li>
         </ul>
     </div>
 </div>

@@ -70,6 +70,8 @@ body,html {
     border: 1px solid #0000002e;
     border-top: 0;
     border-bottom: 0;
+    top:0;
+    bottom:0;
 }
 
 .menutext{
