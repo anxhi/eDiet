@@ -22,6 +22,7 @@ body,html {
     width: 95%;
     margin-left: 5%;
     transition: all 600ms;
+    background-color: #2b2c30;
 }
 
 .buttonelement{
@@ -72,6 +73,7 @@ body,html {
     border-bottom: 0;
     top:0;
     bottom:0;
+    background-color: #2b2c30;
 }
 
 .menutext{
