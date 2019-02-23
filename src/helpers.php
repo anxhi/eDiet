@@ -1,5 +1,7 @@
 <?php
 
+use Intervention\Image\ImageManagerStatic as Image;
+
 function env($key){
 
     if($key == 'ERR_REPORTING'){
@@ -66,4 +68,17 @@ function errors($key=null){
         return $error;
     }
     return [];
+}
+
+function uploadImage($image, $contstraints){
+    $date = new \DateTime();
+    $image_path = dirname(__DIR__).'/public';
+    $public_path =  '/images/uploads/'.$date->format('Y-m-d').'-'.$date->getTimeStamp().'.jpg';
+    $path = $image_path.$public_path;
+
+    $img = Image::make($image['tmp_name']);
+    $img->fit($contstraints['width'],$contstraints['height']);
+    $img->save($path);
+
+    return $public_path;
 }

@@ -16,7 +16,6 @@ class Router{
      */
 
     public static function handleTraffic(){
-
         $compounds = explode('/',
             explode('?',$_SERVER['REQUEST_URI'])[0]
         );
@@ -26,7 +25,6 @@ class Router{
                 array_splice($compounds, $i, $i + 1);
             }
         }
-
         return static::prepareRoute($compounds)->applyMiddleware()->direct();
     }
 
@@ -90,7 +88,6 @@ class Router{
 
         $this->controller = new $class;
         $this->method = explode('@', $request)[1];
-
         return $this;
 
     }

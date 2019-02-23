@@ -13,6 +13,7 @@
     "minimum-stability": "alpha",
 
     "require": {
+        "intervention/image": "^2.4",
         "vlucas/phpdotenv": "^2.5",
         "ext-pdo": "*",
         "php": ">=7.0"
