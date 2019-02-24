@@ -20,25 +20,19 @@ Route::get('/profile','MainController@profile');
 
 /*---------------------------SESSION ROUTES------------------------------------*/
 
+Route::get('/signup','SessionsController@signUpForm');
+Route::post('/signup','SessionsController@signup');
+Route::get('/login','SessionsController@loginForm');
 Route::post('/user-login','SessionsController@login');
 Route::post('/logout','SessionsController@logout');
-Route::get('/signup','SessionsController@signUpForm');
-Route::get('/login','SessionsController@loginForm');
 
+/*---------------------------ADMIN ROUTES------------------------------------*/
 
 Route::get('/dashboard','AdminController@dashboard');
-Route::get('/diet','DietController@index');
-
-
-Route::get('/test',function(){dd('IT works');});
-Route::get('/test/{message}',function($message){dd('Hello '.$message);});
-
-
-
 Route::post('/login','AdminController@login');
-Route::post('/logout','AdminController@logout');
 Route::get('/admin','AdminController@loginForm');
 Route::get('/dashboard','AdminController@dashboard');
+Route::get('/diet','DietController@index');
 
 /*-------------------------------CRUD------------------------------------------*/
 
@@ -55,14 +49,10 @@ foreach($routes as $route){
     Route::post("/update-{$route["slug"]}","AdminController@update");
 }
 
-//Route::get('/news-dashboard','AdminController@news');
-//Route::get('/create-news','AdminController@newsForm');
-//Route::post('/create-news','AdminController@createNews');
-//Route::post('/update-news','AdminController@update');
-
-//Route::get('/position-dashboard','AdminController@positions');
-//Route::get('/create-position','AdminController@positionsForm');
-//Route::post('/create-position','AdminController@createPosition');
-//Route::post('/update-position','AdminController@updatePosition');
-
 Route::post('/delete','AdminController@delete');
+
+
+/*-------------------------------TESTS------------------------------------------*/
+
+Route::get('/test',function(){dd('IT works');});
+Route::get('/test/{message}',function($message){dd('Hello '.$message);});

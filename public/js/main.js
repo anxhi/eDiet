@@ -12,10 +12,10 @@ $("#duration").on("change",function(){
   $("#days").html("Duration (days: "+$(this).val()+")")
  })
 
+$('.date input').datepicker();
+
 
 $("#login-button").click(function(event){
-    // event.preventDefault();
-    // event.stopPropagation();
     $('.form').fadeOut(500);
     $('.wrapper').addClass('form-success');
 });
