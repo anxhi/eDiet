@@ -12,13 +12,14 @@
         <div id="bottom" class="buttonelement"></div>
     </div>
     <div class="menutext">
-        eDiet Menu
+    Menu
     </div>
     <div class="menulist">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/profile">Profile</a></li>
-        </ul>
+        
+            <a href="/">Home</a>
+</div>
+<div class="menulistel">
+            <a href="/profile">Profile</a>
     </div>
 </div>
 <div id="content">
