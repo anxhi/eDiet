@@ -1,41 +1,5 @@
 <?php partials('partials.header'); ?>
-<div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-
-	<div>
-	<img class="logo" src="https://i.imgur.com/DQPbHvu.png">
-	</div>
-    
 
     <section class="home-slider js-fullheight owl-carousel bg-white">
       <div class="slider-item js-fullheight">
@@ -102,9 +66,7 @@
         </div>
       </div>
     </section>
-	
-
-		<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+    <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
 			<div class="container">
 				<div class="row no-gutters">
 					<div class="col-sm-5 img img-2 d-flex align-items-center justify-content-center justify-content-md-end" style="background-image: url(images/about.jpg); position: relative">
@@ -139,8 +101,7 @@
 				</div>
 			</div>
 		</section>
-
-		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);" data-stellar-background-ratio="0.5">
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);" data-stellar-background-ratio="0.5">
     	<div class="container">
     		<div class="row d-md-flex align-items-center justify-content-center">
     			<div class="col-lg-10">
@@ -182,11 +143,7 @@
         </div>
     	</div>
     </section>
-
-
-    
-			
-		<section class="ftco-section">
+    <section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -270,8 +227,7 @@
 				</div>
 			</div>
 		</section>
-
-		<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container">
 				<div class="row d-flex">
           <div class="col-md-5 ftco-animate img img-2" style="background-image: url(images/bg_6.jpg);"></div>
