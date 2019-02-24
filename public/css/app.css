@@ -91,11 +91,19 @@ body,html {
     margin-left: 100px;
     color: #ffffff;
 }
+.menulist a{
+    color: #fff;
+}
 .menulistel{
     font-size: 20px;
     margin-top: 20px;
-    margin-left: 100px;
+    margin-left: 0px;
     color: #ffffff;
+}
+
+.menulistel a{
+    color: #fff;
+
 }
 
 .text-center{
