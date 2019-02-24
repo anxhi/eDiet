@@ -11,18 +11,7 @@ class AdminController extends BaseController{
         parent::__construct();
         $uri = explode("/",$_SERVER['REQUEST_URI'])[1];
         $this->slug = str_replace("/","",explode("-",$uri)[1]);
-        $this->editable = [
-            'users' => [
-                'name' => 'text',
-                'username' => 'text',
-                'role' => 'text'
-            ],
-            'foods' => [
-                'name' => 'text',
-                'calories' => 'number',
-                'category' => 'text',
-            ]
-        ];
+        $this->editable = config("crud.editables");
     }
 
     public function __middleware(){
@@ -42,29 +31,6 @@ class AdminController extends BaseController{
         return view('admin.home');
     }
 
-//    public function news(){
-//        $news = DB::table('news')->get();
-//        return view('admin.news',['news' => $news]);
-//    }
-//
-//    public function newsForm(){
-//        $news = DB::table('news')->find($_GET['news']);
-//        return view('admin.edit-add.news',[
-//            'news' => $news
-//        ]);
-//    }
-//
-//    public function createNews(){
-//         Validation::make([
-//            'title' => 'required',
-//            'content' => 'required',
-//            'link' => 'required',
-//        ]);
-//
-//        News::create();
-//        return back();
-//    }
-//
     public function delete(){
         DB::table($_POST['type'])->delete($_POST['id']);
         return back();
