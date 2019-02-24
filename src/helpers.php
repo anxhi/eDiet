@@ -1,5 +1,6 @@
 <?php
 
+use eDiet\DB;
 use Intervention\Image\ImageManagerStatic as Image;
 
 function env($key){
@@ -51,6 +52,10 @@ function redirect($route){
 
 function auth(){
     return !!$_SESSION['user'];
+}
+
+function auth_user(){
+    return DB::table('users')->find($_SESSION['user_id']);
 }
 
 function back(){

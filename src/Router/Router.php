@@ -61,6 +61,8 @@ class Router{
                 return redirect($this->controller->login_url ?? 'login');
             }else if( auth() && in_array($this->method, $this->controller->{'__middleware'}()['guest'] ?? [])){
                 return redirect($this->controller->after_login);
+            }else if(in_array($this->method, $this->controller->{'__middleware'}()['admin'] ?? []) && (!auth() || auth_user()->role!=='admin')){
+                return redirect("");
             }
 
         }

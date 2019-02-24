@@ -38,9 +38,9 @@
         <h4 class="fw-300 c-grey-900 mB-40">Login</h4>
         <form action="/login" method="POST">
             <div class="form-group">
-                <label class="text-normal text-dark">Email</label>
-                <input type="email" class="form-control" placeholder="John Doe" name="email">
-                <div class="invalid-feedback"><?=implode('<br>',errors('email'))?></div>
+                <label class="text-normal text-dark">Username</label>
+                <input type="text" class="form-control" placeholder="johndoe" name="username">
+                <div class="invalid-feedback"><?=implode('<br>',errors('username'))?></div>
             </div>
             <div class="form-group">
                 <label class="text-normal text-dark">Password</label>

@@ -16,18 +16,17 @@ use eDiet\Router as Route;
 
 
 Route::get('/','MainController@index');
-
 Route::get('/profile','MainController@profile');
 
-/*---------------------------LOGIN SESSIONS------------------------------------*/
+/*---------------------------SESSION ROUTES------------------------------------*/
 
-Route::post('/login','SessionsController@login');
-Route::post('/logout','AdminController@logout');
-
+Route::post('/user-login','SessionsController@login');
+Route::post('/logout','SessionsController@logout');
+Route::get('/signup','SessionsController@signUpForm');
 Route::get('/login','SessionsController@loginForm');
+
+
 Route::get('/dashboard','AdminController@dashboard');
-
-
 Route::get('/meal','VaktController@index');
 
 
@@ -43,16 +42,26 @@ Route::get('/dashboard','AdminController@dashboard');
 
 /*-------------------------------CRUD------------------------------------------*/
 
-Route::get('/news-dashboard','AdminController@news');
-Route::get('/position-dashboard','AdminController@positions');
-//Route::get('/partners-dashboard','AdminController@partners');
+$routes = [
+    [ "slug" => "users"],
+    [ "slug" => "diets" ]
+];
 
-Route::get('/create-news','AdminController@newsForm');
-Route::post('/create-news','AdminController@createNews');
-Route::get('/create-position','AdminController@positionsForm');
-Route::post('/create-position','AdminController@createPosition');
-Route::post('/update-position','AdminController@updatePosition');
-//Route::get('/create-partners','AdminController@partnersForm');
+foreach($routes as $route){
+    Route::get("/browse-{$route["slug"]}","AdminController@browse");
+    Route::get("/create-{$route["slug"]}/{id}","AdminController@create");
+    Route::post("/create-{$route["slug"]}","AdminController@add");
+    Route::post("/update-{$route["slug"]}","AdminController@update");
+}
 
-Route::post('/delete','AdminController@delete');
-Route::post('/update-news','AdminController@update');
+//Route::get('/news-dashboard','AdminController@news');
+//Route::get('/create-news','AdminController@newsForm');
+//Route::post('/create-news','AdminController@createNews');
+//Route::post('/update-news','AdminController@update');
+
+//Route::get('/position-dashboard','AdminController@positions');
+//Route::get('/create-position','AdminController@positionsForm');
+//Route::post('/create-position','AdminController@createPosition');
+//Route::post('/update-position','AdminController@updatePosition');
+
+//Route::post('/delete','AdminController@delete');

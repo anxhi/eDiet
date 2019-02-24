@@ -1,5 +1,3 @@
-<?php $errors = $_SESSION['errors'] ?>
-<?php var_dump($_SESSION['errors']);?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,14 +12,14 @@
 <div class="wrapper">
     <div class="container">
         <h1>Welcome</h1>
-        <form class="form" method="post" action="/login">
-            <input type="text" placeholder="Username">
-            <small style="color:red; text-align: left"><?=implode("<br>",$errors['email'])?></small>
-            <input type="password" placeholder="Password">
-            <small style="color:red; text-align: left"><?=implode(",",$errors['password'])?></small>
+        <form class="form" method="post" action="/user-login">
+            <input type="text" placeholder="Username" name="username">
+            <small style="color:red; text-align: left"><?=implode('<br>',errors('username'))?><br></small>
+            <input type="password" placeholder="Password" name="password">
+            <small style="color:red; text-align: left"><?=implode('<br>',errors('password'))?><br></small>
 
             <button type="submit" id="login-button">Login</button>
-            <small style="color:red"><?=implode("<br>",$errors['login'])?></small>
+            <small style="color:red"><?=implode('<br>',errors('login'))?><br></small>
         </form>
     </div>
 </div>

@@ -47,7 +47,7 @@ class DB{
     }
 
     public function find($id){
-        return DB::raw("SELECT * FROM {$this->table} WHERE id = :id",['id' => $id])[0];
+        return DB::raw("SELECT * FROM {$this->table} WHERE id = :id limit 1",['id' => $id])[0];
     }
 
     public function get(){

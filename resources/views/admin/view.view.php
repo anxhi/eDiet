@@ -41,22 +41,22 @@
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Content</th>
-                        <th scope="col">Link</th>
+                        <?php foreach(array_keys($fields) as $field): ?>
+                            <th scope="col"><?=$field?></th>
+                        <?php endforeach; ?>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($news as $singularNews): ?>
+                    <?php foreach($datas as $data): ?>
                         <tr>
-                            <th scope="row"><?=$singularNews->id?></th>
-                            <td><?=$singularNews->title?></td>
-                            <td><?=substr($singularNews->content,0,30)?></td>
-                            <td><?=$singularNews->link?></td>
+                            <th scope="row"><?=$data->id?></th>
+                            <?php foreach (array_keys($fields) as $field):?>
+                                <td><?=$data->{$field}?></td>
+                            <?php endforeach; ?>
                             <td>
-                                <button onclick="toggleId(<?=$singularNews->id?>)" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
-                                <a href="/create-news?news=<?=$singularNews->id?>" class="btn btn-warning">Edit</a>
+                                <button onclick="toggleId(<?=$data->id?>)" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                                <a href="/create-<?=$slug?>/<?=$data->id?>" class="btn btn-warning">Edit</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

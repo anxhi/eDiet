@@ -13,17 +13,17 @@
                             <label for="validationCustom01">Title</label>
                             <input type="text" class="form-control" id="validationCustom01" placeholder="Title" name="title" required
                                 <?php if($news):?>
-                                   value="<?=$news->title?>"
-                               <?php endif;?>
+                                    value="<?=$news->title?>"
+                                <?php endif;?>
                             >
                         </div>
-                        
+
                         <div class="col-md-8 mb-3">
                             <label for="validationCustom04">Link</label>
                             <input type="text" class="form-control" id="validationCustom01" placeholder="Link" name="link" required
                                 <?php if($news):?>
-                                   value="<?=$news->link?>"
-                               <?php endif;?>
+                                    value="<?=$news->link?>"
+                                <?php endif;?>
                             >
                         </div>
                         <div class="col-md-8 mb-3">

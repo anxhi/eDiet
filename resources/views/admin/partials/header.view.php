@@ -50,66 +50,28 @@
                 </div>
             </div>
             <ul class="sidebar-menu scrollable pos-r">
+            <?php
+                $routes = [
+                    [ "slug" => "users"],
+                    [ "slug" => "diets" ]
+                ];
+            ?>
+            <?php foreach($routes as $route): ?>
                 <li class="nav-item mT-30 active">
-                    <a class="sidebar-link" href="/news-dashboard">
+                    <a class="sidebar-link" href="<?="/browse-{$route["slug"]}"?>">
                         <span class="icon-holder">
                             <i class="c-blue-500 ti-home"></i>
                         </span>
-                        <span class="title">News</span>
+                        <span class="title"><?=ucfirst($route["slug"])?></span>
                     </a>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="sidebar-link" href="/partners-dashboard">-->
-<!--                        <span class="icon-holder">-->
-<!--                            <i class="c-blue-500 ti-share"></i>-->
-<!--                        </span>-->
-<!--                        <span class="title">Partners</span>-->
-<!--                    </a>-->
-<!--                </li>-->
                 <li class="nav-item">
-                    <a class="sidebar-link" href="/create-news">
+                    <a class="sidebar-link" href="<?="/create-{$route["slug"]}"?>">
                         <span class="icon-holder"><i class="c-red-500 ti-files"></i> </span>
-                        <span class="title">Create News</span>
+                        <span class="title">Create <?=ucfirst($route["slug"])?></span>
                     </a>
                 </li>
-
-                <li class="nav-item mT-30 active">
-                    <a class="sidebar-link" href="/position-dashboard">
-                        <span class="icon-holder">
-                            <i class="c-blue-500 ti-home"></i>
-                        </span>
-                        <span class="title">Positions</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="sidebar-link" href="/create-position">
-                        <span class="icon-holder"><i class="c-red-500 ti-files"></i> </span>
-                        <span class="title">Create Position</span>
-                    </a>
-                </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="sidebar-link" href="/create-partners">-->
-<!--                        <span class="icon-holder"><i class="c-purple-500 ti-map"></i> </span>-->
-<!--                        <span class="title">Create Partners</span>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="sidebar-link" href="/create-news">-->
-<!--                        <span class="icon-holder">-->
-<!--                            <i class="c-blue-500 ti-home"></i>-->
-<!--                        </span>-->
-<!--                        <span class="title">News</span>-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="sidebar-link" href="/create-partners">-->
-<!--                        <span class="icon-holder">-->
-<!--                            <i class="c-blue-500 ti-share"></i>-->
-<!--                        </span>-->
-<!--                        <span class="title">Partners</span>-->
-<!--                    </a>-->
-<!--                </li>-->
+            <?php endforeach ?>
             </ul>
         </div>
     </div>

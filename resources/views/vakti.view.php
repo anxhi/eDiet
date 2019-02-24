@@ -18,16 +18,16 @@
 
                 <div class="form-group">
                     <div class="form-check form-check-inline">
-                        <label class="form-check-label" for="glutenfree">Gluten Free</label>
-                        <input type="checkbox" class="form-check-input" id="glutenfree" name="type">
+                        <label class="form-check-label" for="isGlutenIntolerant">Gluten Free</label>
+                        <input type="checkbox" class="form-check-input" id="isGlutenIntolerant" name="isGlutenIntolerant">
                     </div>
                     <div class="form-check form-check-inline">
-                        <label class="form-check-label" for="dairyfree">Dairy Free</label>
-                        <input type="checkbox" class="form-check-input" id="dairyfree" name="dairyfree">
+                        <label class="form-check-label" for="isDairyIntolerant">Dairy Free</label>
+                        <input type="checkbox" class="form-check-input" id="isDairyIntolerant" name="isDairyIntolerant">
                     </div>
                     <div class="form-check form-check-inline">
-                        <label class="form-check-label" for="vegan">Vegan </label>
-                        <input type="checkbox" class="form-check-input" id="vegan" name="vegan">
+                        <label class="form-check-label" for="isVegan">Vegan </label>
+                        <input type="checkbox" class="form-check-input" id="isVegan" name="isVegan">
                     </div>
                 </div>
 
