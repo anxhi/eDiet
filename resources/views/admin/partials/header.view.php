@@ -12,7 +12,7 @@
         @-webkit-keyframes sk-scaleout{0%{-webkit-transform:scale(0)}100%{-webkit-transform:scale(1);opacity:0}}
         @keyframes sk-scaleout{0%{-webkit-transform:scale(0);transform:scale(0)}100%{-webkit-transform:scale(1);transform:scale(1);opacity:0}}
     </style>
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body class="app">
 <div id="loader"><div class="spinner"></div></div>
@@ -32,7 +32,7 @@
                             <div class="peers ai-c fxw-nw">
                                 <div class="peer">
                                     <div class="logo">
-                                        <img src="assets/static/images/logo.png" alt=""></div>
+                                        <img src="/assets/static/images/logo.png" alt=""></div>
                                 </div>
                                 <div class="peer peer-greed">
                                     <h5 class="lh-1 mB-0 logo-text">Adminator</h5>
@@ -53,7 +53,7 @@
             <?php
                 $routes = [
                     [ "slug" => "users"],
-                    [ "slug" => "diets" ]
+                    [ "slug" => "foods" ]
                 ];
             ?>
             <?php foreach($routes as $route): ?>

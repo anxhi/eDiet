@@ -3,7 +3,7 @@
 </footer>
 </div>
 </div>
-<script type="text/javascript" src="vendor.js"></script>
-<script type="text/javascript" src="bundle.js"></script>
+<script type="text/javascript" src="/vendor.js"></script>
+<script type="text/javascript" src="/bundle.js"></script>
 </body>
 </html>
