@@ -52,18 +52,20 @@
 		            <div class="thumb mt-4 mb-3 d-flex">
 		            	<a href="#" class="thumb-menu pr-md-4 text-center">
 		            		<div class="img" style="background-image: url(images/menu-1.jpg);"></div>
-		            		<h4>Australian Organic Beef</h4>
-		            	</a>
+		            		<h4>Dieta Vegane</h4>
+		            	</a>e
 		            	<a href="#" class="thumb-menu pr-md-4 text-center">
 		            		<div class="img" style="background-image: url(images/menu-2.jpg);"></div>
-		            		<h4>Australian Organic Beef</h4>
+		            		<h4>Dieta Vegjetariane</h4>
 		            	</a>
 		            	<a href="#" class="thumb-menu pr-md-4 text-center">
 		            		<div class="img" style="background-image: url(images/menu-3.jpg);"></div>
-		            		<h4>Australian Organic Beef</h4>
+		            		<h4>Dieta me baze mishi</h4>
 		            	</a>
 		            </div>
-		            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Book A Table</a></p>
+								<p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Kerko Dieten Tende</a></p>
+							</p>
+								
 	            </div>
 	          </div>
         	</div>
@@ -79,23 +81,23 @@
           	</div>
 	          <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 	          	<div class="text mt-md-5">
-		            <h1 class="mb-4">We Love <br> Delicious Foods</h1>
-		            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
+		            <h1 class="mb-4">Ne e duam ushqimin <br> Delicious Foods</h1>
+		            <p>Zhgjidhni dieten tuaj sot dhe ne qofte se jeni alergjik ngaj disa ushqimeve</p>
 		            <div class="thumb mt-4 mb-3 d-flex">
 		            	<a href="#" class="thumb-menu pr-md-4 text-center">
 		            		<div class="img" style="background-image: url(images/menu-1.jpg);"></div>
-		            		<h4>Australian Organic Beef</h4>
+		            		<h4>Dieta Vegane</h4>
 		            	</a>
 		            	<a href="#" class="thumb-menu pr-md-4 text-center">
 		            		<div class="img" style="background-image: url(images/menu-2.jpg);"></div>
-		            		<h4>Australian Organic Beef</h4>
+		            		<h4>Dita Pa sheqerna</h4>
 		            	</a>
 		            	<a href="#" class="thumb-menu pr-md-4 text-center">
 		            		<div class="img" style="background-image: url(images/menu-3.jpg);"></div>
-		            		<h4>Australian Organic Beef</h4>
+		            		<h4>Dieta Pa Bulmete</h4>
 		            	</a>
 		            </div>
-		            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Book A Table</a></p>
+		            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Kerko Dieten Tende</a></p>
 	            </div>
 	          </div>
         	</div>
@@ -113,25 +115,25 @@
 					<div class="col-sm-7 wrap-about py-5 ftco-animate">
 	          <div class="heading-section mt-5 mb-4">
 	          	<div class="pl-lg-5 ml-md-5">
-		          	<span class="subheading">About</span>
-		            <h2 class="mb-4">Welcome to Kusina Restaurant</h2>
+		          	<span class="subheading">Keshilla</span>
+		            <h2 class="mb-4">Mendje e shendoshe ne trup te shendoshe</h2>
 	            </div>
 	          </div>
 	          <div class="pl-lg-5 ml-md-5">
-							<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-							<h3 class="mt-5">Special Recipe</h3>
+							<p>“Mbani gjithmonë një sasi ushqimesh të jashtëzakonshme si mishi i konservuar, supat dhe perimet e ngrira në rast se supermarketi ju vjen në mendje. Ju mund të keni një vakt të shëndetshëm pa bërë thirrje për ushqime me kalori”</p>
+							<h3 class="mt-5">Dietat me te perdorura</h3>
 							<div class="thumb my-4 d-flex">
 	            	<a href="#" class="thumb-menu pr-md-4 text-center">
 	            		<div class="img" style="background-image: url(images/lunch-4.jpg);"></div>
-	            		<h4>Australian Organic Beef</h4>
+	            		<h4>Dieta me karrota</h4>
 	            	</a>
 	            	<a href="#" class="thumb-menu pr-md-4 text-center">
 	            		<div class="img" style="background-image: url(images/lunch-7.jpg);"></div>
-	            		<h4>Australian Organic Beef</h4>
+	            		<h4>Dieta vegane</h4>
 	            	</a>
 	            	<a href="#" class="thumb-menu pr-md-4 text-center">
 	            		<div class="img" style="background-image: url(images/lunch-6.jpg);"></div>
-	            		<h4>Australian Organic Beef</h4>
+	            		<h4>Dieta me e rrept</h4>
 	            	</a>
 	            </div>
 						</div>
@@ -190,79 +192,55 @@
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-7 text-center heading-section ftco-animate">
-          	<span class="subheading">Chef</span>
-            <h2 class="mb-4">Our Mater Chef</h2>
+          	<span class="subheading">Skuadra</span>
+            <h2 class="mb-4">Dietologet Tane</h2>
           </div>
         </div>	
 				<div class="row">
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
-							<div class="img" style="background-image: url(images/chef-4.jpg);"></div>
+							<div class="img" style="background-image: url(https://images.unsplash.com/photo-1480408144303-d874c5e12201?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);"></div>
 							<div class="text px-4 pt-4">
 								<h3>John Smooth</h3>
-								<span class="position mb-2">CEO, Co Founder</span>
+								<span class="position mb-2">Dietolog</span>
 								<div class="faded">
-									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-									<ul class="ftco-social d-flex">
-		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-		              </ul>
+								
 	              </div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
-							<div class="img" style="background-image: url(images/chef-2.jpg);"></div>
+							<div class="img" style="background-image: url(https://images.unsplash.com/photo-1458071103673-6a6e4c4a3413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);"></div>
 							<div class="text px-4 pt-4">
 								<h3>Rebeca Welson</h3>
-								<span class="position mb-2">Head Chef</span>
+								<span class="position mb-2">Dietologe/span>
 								<div class="faded">
-									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-									<ul class="ftco-social d-flex">
-		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-		              </ul>
+								
 	              </div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
-							<div class="img" style="background-image: url(images/chef-3.jpg);"></div>
+							<div class="img" style="background-image: url(https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);"></div>
 							<div class="text px-4 pt-4">
 								<h3>Kharl Branyt</h3>
-								<span class="position mb-2">Chef</span>
+								<span class="position mb-2">Dietolog</span>
 								<div class="faded">
-									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-									<ul class="ftco-social d-flex">
-		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-		              </ul>
+								
 	              </div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
-							<div class="img" style="background-image: url(images/chef-1.jpg);"></div>
+							<div class="img" style="background-image: url(https://images.unsplash.com/photo-1476657680631-c07285ff2581?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1610&q=80);"></div>
 							<div class="text px-4 pt-4">
 								<h3>Luke Simon</h3>
-								<span class="position mb-2">Chef</span>
+								<span class="position mb-2">Dietolog</span>
 								<div class="faded">
-									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
-									<ul class="ftco-social d-flex">
-		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-		              </ul>
+								
 	              </div>
 							</div>
 						</div>
@@ -274,62 +252,60 @@
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container">
 				<div class="row d-flex">
-          <div class="col-md-5 ftco-animate img img-2" style="background-image: url(images/bg_6.jpg);"></div>
+          <div class="col-md-5 ftco-animate img img-2" style="background-image: url(https://images.unsplash.com/photo-1515942400420-2b98fed1f515?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);"></div>
           <div class="col-md-7 ftco-animate makereservation p-4 p-md-5">
           	<div class="heading-section ftco-animate mb-5">
-	          	<span class="subheading">Book a Table</span>
-	            <h2 class="mb-4">Make Reservation</h2>
+	          	<span class="subheading">Kerko Dieten Tende</span>
+	            <h2 class="mb-4">Ploteso Tani</h2>
 	          </div>
             <form action="#">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Name</label>
-                    <input type="text" class="form-control" placeholder="Your Name">
+                    <label for="">Emri</label>
+                    <input type="text" class="form-control" placeholder="Vendosni emrin tuaj">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" class="form-control" placeholder="Your Email">
+                    <label for="">E-mail</label>
+                    <input type="text" class="form-control" placeholder="Vendosni Emailin tuaj">
                   </div>
                 </div>
+								
+								
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" class="form-control" placeholder="Phone">
+                    <label for="">Periudha</label>
+                    <div class="select-wrap one-third">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="" class="form-control">
+                        <option value="">Sa do te jtete kohezgjatja</option>
+                        <option value="">3 jave</option>
+                        <option value="">1 muaj</option>
+                        <option value="">2 muaj</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" class="form-control" id="book_date" placeholder="Date">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Time</label>
-                    <input type="text" class="form-control" id="book_time" placeholder="Time">
-                  </div>
-                </div>
+
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="">Person</label>
                     <div class="select-wrap one-third">
                       <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                       <select name="" id="" class="form-control">
-                        <option value="">Person</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4+</option>
+                        <option value="">Pjes e ciles kategori jeni</option>
+                        <option value="">Vegan</option>
+                        <option value="">Vegjetarjan</option>
+                        <option value="">Nuk perdorni sheqernat</option>
                       </select>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12 mt-3">
                   <div class="form-group">
-                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
+                    <input type="submit" value="Krijo Dieten" class="btn btn-primary py-3 px-5">
                   </div>
                 </div>
               </div>
