@@ -1,7 +1,7 @@
 <?php partials('admin.partials.header') ?>
 <script>
     function toggleId(id) {
-        document.querySelector('#deleteForm input[name="type"]').setAttribute('value','news');
+        //document.querySelector('#deleteForm input[name="type"]').setAttribute('value',<?//=$slug?>//);
         document.querySelector('#deleteForm input[name="id"]').setAttribute('value',id);
     }
 
@@ -10,7 +10,7 @@
     }
 </script>
 <form action="/delete" id="deleteForm" method="POST">
-    <input type="hidden" name="type">
+    <input type="hidden" name="type" value="<?=$slug?>">
     <input type="hidden" name="id">
 </form>
 

@@ -11,6 +11,18 @@ class AdminController extends BaseController{
         parent::__construct();
         $uri = explode("/",$_SERVER['REQUEST_URI'])[1];
         $this->slug = str_replace("/","",explode("-",$uri)[1]);
+        $this->editable = [
+            'users' => [
+                'name' => 'text',
+                'username' => 'text',
+                'role' => 'text'
+            ],
+            'foods' => [
+                'name' => 'text',
+                'calories' => 'number',
+                'category' => 'text',
+            ]
+        ];
     }
 
     public function __middleware(){
@@ -53,91 +65,57 @@ class AdminController extends BaseController{
 //        return back();
 //    }
 //
-        public function delete(){
-            DB::table($_POST['type'])->delete($_POST['id']);
-            return back();
-        }
+    public function delete(){
+        DB::table($_POST['type'])->delete($_POST['id']);
+        return back();
+    }
 //
-//    public function update(){
-//        Validation::make([
-//            'title' => 'required',
-//            'content' => 'required',
-//            'link' => 'required',
-//        ]);
-//
-//        News::update();
-//        return redirect('news-dashboard');
-//    }
-//
-//    public function positionsForm(){
-//        if($_GET['position']){
-//            $position = DB::table('positions')->find($_GET['position']);
-//            return view('admin.edit-add.positions',['position' => $position ]);
-//        }
-//        return view('admin.edit-add.positions');
-//    }
-//
-//    public function createPosition(){
-//        $fields = [
-//            'name', 'reports', 'type', 'overview', 'responsibilities','requirements','skills'
-//        ];
-//        $data = [];
-//
-//        foreach($fields as $field){
-//            $data[$field] = $_POST[$field];
-//        }
-//        DB::table('positions')->insert($data);
-//        return redirect('position-dashboard');
-//
-//    }
-//
-//    public function updatePosition(){
-//        $fields = [
-//            'name', 'reports', 'type', 'overview', 'responsibilities','requirements','skills'
-//        ];
-//        $data = [];
-//        foreach ($fields as $field) {
-//            if(isset($_POST[$field])){
-//                $data[$field] = $_POST[$field];
-//            }
-//        }
-//
-//        DB::table('positions')->update($_POST['id'],$data);
-//        return redirect('position-dashboard');
-//    }
-//
-//    public function positions(){
-//        $postions = \DB::table('positions')->get();
-//        return view('admin.positions',['positions' => $postions]);
-//    }
+
 
     public function browse(){
-//        dd(DB::table($this->slug)->get());
-        $editable = [
-            'name' => 'text',
-            'username' => 'text',
-            'role' => 'text'
-        ];
         return view('admin.view',[
             'datas' => DB::table($this->slug)->get(),
-            'fields' => $editable,
+            'fields' => $this->editable[$this->slug],
             'slug' => $this->slug
         ]);
     }
 
-    public function create($id){
+    public function create($id = null){
+        $compact = [
+            'slug' => $this->slug,
+            'fields' => $this->editable[$this->slug],
+        ];
         if($id){
-            $data = DB::table($this->slug)->find($id);
-            return view('admin.edit-add.view',['data' => $data ]);
+            $compact['dataContent'] = DB::table($this->slug)->find($id);
         }
-        return view('admin.edit-add.view');
+        return view('admin.edit-add.view',$compact);
     }
 
     public function add(){
-        dd($this->slug);
+        $fields = $this->editable[$this->slug];
+        $request = $_POST;
+
+        $vals = array_reduce(array_keys($fields),function($acc,$field) use ($request) {
+            $acc[$field] = $request[$field];
+            return $acc;
+        },[]);
+
+
+        DB::table($this->slug)->insert($vals);
+        return redirect("browse-{$this->slug}");
     }
 
     public function update(){
-        dd($this->slug);
+        $fields = $this->editable[$this->slug];
+        $request = $_POST;
+
+        $vals = array_reduce(array_keys($fields),function($acc,$field) use ($request) {
+            $acc[$field] = $request[$field];
+            return $acc;
+        },[]);
+
+
+        DB::table($this->slug)->update($_POST['id'],$vals);
+        return redirect("browse-{$this->slug}");
     }
 }

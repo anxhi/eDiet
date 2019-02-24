@@ -27,7 +27,7 @@ Route::get('/login','SessionsController@loginForm');
 
 
 Route::get('/dashboard','AdminController@dashboard');
-Route::get('/meal','VaktController@index');
+Route::get('/diet','DietController@index');
 
 
 Route::get('/test',function(){dd('IT works');});
@@ -43,12 +43,13 @@ Route::get('/dashboard','AdminController@dashboard');
 /*-------------------------------CRUD------------------------------------------*/
 
 $routes = [
-    [ "slug" => "users"],
-    [ "slug" => "diets" ]
+    [ "slug" => "users" ],
+    [ "slug" => "foods" ],
 ];
 
 foreach($routes as $route){
     Route::get("/browse-{$route["slug"]}","AdminController@browse");
+    Route::get("/create-{$route["slug"]}","AdminController@create");
     Route::get("/create-{$route["slug"]}/{id}","AdminController@create");
     Route::post("/create-{$route["slug"]}","AdminController@add");
     Route::post("/update-{$route["slug"]}","AdminController@update");
@@ -64,4 +65,4 @@ foreach($routes as $route){
 //Route::post('/create-position','AdminController@createPosition');
 //Route::post('/update-position','AdminController@updatePosition');
 
-//Route::post('/delete','AdminController@delete');
+Route::post('/delete','AdminController@delete');
