@@ -150,16 +150,24 @@
 		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="18">0</strong>
-		                <span>Years of Experienced</span>
+		                <strong class="number" data-number="5">0</strong>
+		                <span>Vite Eksperience</span>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
 		            <div class="block-18">
 		              <div class="text">
-		                <strong class="number" data-number="20000">0</strong>
-		                <span>Happy Customers</span>
+		                <strong class="number" data-number="560">0</strong>
+		                <span>Perdorues te lumtur</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="254">0</strong>
+		                <span>Dieta te krijuara</span>
 		              </div>
 		            </div>
 		          </div>
@@ -167,15 +175,7 @@
 		            <div class="block-18">
 		              <div class="text">
 		                <strong class="number" data-number="564">0</strong>
-		                <span>Finished Projects</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		              <div class="text">
-		                <strong class="number" data-number="300">0</strong>
-		                <span>Working Days</span>
+		                <span>Kg te humbura</span>
 		              </div>
 		            </div>
 		          </div>
