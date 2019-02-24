@@ -16,7 +16,6 @@ class Router{
      */
 
     public static function handleTraffic(){
-
         $compounds = explode('/',
             explode('?',$_SERVER['REQUEST_URI'])[0]
         );
@@ -26,7 +25,6 @@ class Router{
                 array_splice($compounds, $i, $i + 1);
             }
         }
-
         return static::prepareRoute($compounds)->applyMiddleware()->direct();
     }
 
@@ -63,6 +61,8 @@ class Router{
                 return redirect($this->controller->login_url ?? 'login');
             }else if( auth() && in_array($this->method, $this->controller->{'__middleware'}()['guest'] ?? [])){
                 return redirect($this->controller->after_login);
+            }else if(in_array($this->method, $this->controller->{'__middleware'}()['admin'] ?? []) && (!auth() || auth_user()->role!=='admin')){
+                return redirect("");
             }
 
         }
@@ -90,7 +90,6 @@ class Router{
 
         $this->controller = new $class;
         $this->method = explode('@', $request)[1];
-
         return $this;
 
     }

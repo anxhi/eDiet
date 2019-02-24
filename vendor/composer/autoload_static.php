@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2daa33d55bf357e3d8f232f4c1c60cd8
+class ComposerStaticInitf0d5ff1a0c89d34bb46bd056c871edf3
 {
     public static $prefixLengthsPsr4 = array (
         'D' => 
@@ -21,7 +21,13 @@ class ComposerStaticInit2daa33d55bf357e3d8f232f4c1c60cd8
     );
 
     public static $classMap = array (
+        'ComposerAutoloaderInitf0d5ff1a0c89d34bb46bd056c871edf3' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'Composer\\Autoload\\ComposerStaticInitf0d5ff1a0c89d34bb46bd056c871edf3' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Controllers/AdminController.php',
         'Controllers\\MainController' => __DIR__ . '/../..' . '/app/Controllers/MainController.php',
+        'Controllers\\SessionsController' => __DIR__ . '/../..' . '/app/Controllers/SessionsController.php',
+        'Controllers\\VaktController' => __DIR__ . '/../..' . '/app/Controllers/VaktController.php',
         'Dotenv\\Dotenv' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Dotenv.php',
         'Dotenv\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ExceptionInterface.php',
         'Dotenv\\Exception\\InvalidCallbackException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/InvalidCallbackException.php',
@@ -30,6 +36,7 @@ class ComposerStaticInit2daa33d55bf357e3d8f232f4c1c60cd8
         'Dotenv\\Exception\\ValidationException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
         'Dotenv\\Loader' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Loader.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
+        'Models\\Diet' => __DIR__ . '/../..' . '/app/Diet.php',
         'ErrorHandler' => __DIR__ . '/../..' . '/composer-setup.php',
         'HttpClient' => __DIR__ . '/../..' . '/composer-setup.php',
         'Installer' => __DIR__ . '/../..' . '/composer-setup.php',
@@ -45,9 +52,9 @@ class ComposerStaticInit2daa33d55bf357e3d8f232f4c1c60cd8
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2daa33d55bf357e3d8f232f4c1c60cd8::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2daa33d55bf357e3d8f232f4c1c60cd8::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit2daa33d55bf357e3d8f232f4c1c60cd8::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf0d5ff1a0c89d34bb46bd056c871edf3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf0d5ff1a0c89d34bb46bd056c871edf3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf0d5ff1a0c89d34bb46bd056c871edf3::$classMap;
 
         }, null, ClassLoader::class);
     }

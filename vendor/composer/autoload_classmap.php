@@ -6,7 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ComposerAutoloaderInitf0d5ff1a0c89d34bb46bd056c871edf3' => $vendorDir . '/composer/autoload_real.php',
+    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
+    'Composer\\Autoload\\ComposerStaticInitf0d5ff1a0c89d34bb46bd056c871edf3' => $vendorDir . '/composer/autoload_static.php',
+    'Controllers\\AdminController' => $baseDir . '/app/Controllers/AdminController.php',
     'Controllers\\MainController' => $baseDir . '/app/Controllers/MainController.php',
+    'Controllers\\SessionsController' => $baseDir . '/app/Controllers/SessionsController.php',
+    'Controllers\\VaktController' => $baseDir . '/app/Controllers/VaktController.php',
     'Dotenv\\Dotenv' => $vendorDir . '/vlucas/phpdotenv/src/Dotenv.php',
     'Dotenv\\Exception\\ExceptionInterface' => $vendorDir . '/vlucas/phpdotenv/src/Exception/ExceptionInterface.php',
     'Dotenv\\Exception\\InvalidCallbackException' => $vendorDir . '/vlucas/phpdotenv/src/Exception/InvalidCallbackException.php',
@@ -15,6 +21,7 @@ return array(
     'Dotenv\\Exception\\ValidationException' => $vendorDir . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
     'Dotenv\\Loader' => $vendorDir . '/vlucas/phpdotenv/src/Loader.php',
     'Dotenv\\Validator' => $vendorDir . '/vlucas/phpdotenv/src/Validator.php',
+    'Models\\Diet' => $baseDir . '/app/Diet.php',
     'ErrorHandler' => $baseDir . '/composer-setup.php',
     'HttpClient' => $baseDir . '/composer-setup.php',
     'Installer' => $baseDir . '/composer-setup.php',

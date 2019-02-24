@@ -15,11 +15,25 @@
     Menu
     </div>
     <div class="menulist">
-        
-            <a href="/">Home</a>
-</div>
-<div class="menulistel">
-            <a href="/profile">Profile</a>
+        <a href="/">Home</a>
+        <?php if(auth()):?>
+            <div class="menulistel">
+              <a href="/profile">Profile</a>
+            </div>
+        <?php endif; ?>
+        <?php if(!auth()):?>
+          <div class="menulistel">
+            <a href="/login">Login</a></li>
+          </div>
+          <div class="menulistel">
+            <a href="/signup">Signup</a></li>
+          </div>            
+        <?php else: ?>
+            <form action="/logout" method="post" id="logoutForm" style="display: none;"></form>
+            <div class="menulistel">
+              <a href="#" onclick="document.getElementById('logoutForm').submit()">Logout</a></li>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 <div id="content">
