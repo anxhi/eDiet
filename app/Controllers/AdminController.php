@@ -69,9 +69,6 @@ class AdminController extends BaseController{
         DB::table($_POST['type'])->delete($_POST['id']);
         return back();
     }
-//
-
-
     public function browse(){
         return view('admin.view',[
             'datas' => DB::table($this->slug)->get(),
