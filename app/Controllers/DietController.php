@@ -2,7 +2,7 @@
 namespace Controllers;
 use eDiet\BaseController;
 
-class VaktController extends BaseController{
+class DietController extends BaseController{
 
     public function index(){
         return view('vakti');
