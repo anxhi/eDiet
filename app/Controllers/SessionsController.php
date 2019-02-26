@@ -43,7 +43,37 @@ class SessionsController extends BaseController{
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_name'] = $user->name;
 
-        return redirect($this->login_url ?? 'login');
+        return redirect("user-data");
+    }
+
+    public function dataForm(){
+        return view('data');
+    }
+
+    public function data(){
+//        dd([
+//            'user_id' => auth_user()->id,
+//
+//            'weight' => $_POST['Weight'],
+//            'height' => $_POST['Height'],
+//            'chest' => $_POST['Chest'],
+//            'leg' => $_POST['Leg'],
+//            'hip' => $_POST['Hip'],
+//            'calf' => $_POST['Calf'],
+//            'waist' => $_POST['Waist'],
+//        ]);
+        DB::table('user_data')->insert([
+            'BMI' => $_POST['BMI'],
+            'user_id' => auth_user()->id,
+            'weight' => $_POST['Weight'],
+            'height' => $_POST['Height'],
+            'chest' => $_POST['Chest'],
+            'leg' => $_POST['Leg'],
+            'hip' => $_POST['Hip'],
+            'calf' => $_POST['Calf'],
+            'waist' => $_POST['Waist'],
+        ]);
+        return redirect('');
     }
 
 }

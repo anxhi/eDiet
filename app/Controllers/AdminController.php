@@ -22,7 +22,8 @@ class AdminController extends BaseController{
                 'create',
                 'add',
                 'update',
-                'delete'
+                'delete',
+                'diet',
             ],
         ];
     }
@@ -36,6 +37,7 @@ class AdminController extends BaseController{
         return back();
     }
     public function browse(){
+//        dd($this->editable[$this->slug]);
         return view('admin.view',[
             'datas' => DB::table($this->slug)->get(),
             'fields' => $this->editable[$this->slug],
@@ -80,5 +82,86 @@ class AdminController extends BaseController{
 
         DB::table($this->slug)->update($_POST['id'],$vals);
         return redirect("browse-{$this->slug}");
+    }
+
+    public function diet(){
+        return view('diet',[
+            'foods' => DB::table('foods')->get(),
+            'meals' => DB::table('meals')->get()
+        ]);
+    }
+
+    public function createDiet(){
+
+        DB::table('diets')->insert([
+            'name' => $_POST['name'],
+            'isDiaryFree' => (int)!!$_POST['isDairyIntolerant'],
+            'isGlutenFree' => (int)!!$_POST['isGlutenIntolerant'],
+            'isVegan' => (int)!!$_POST['isVegan'],
+            'duration' => $_POST['duration'],
+            'photo' => uploadImage($_FILES['file'],[
+                'width' => 400,
+                'height' => 400,
+            ])
+        ]);
+
+        $diet = DB::raw('SELECT * FROM diets where name = :name limit 1',[
+            'name' => $_POST['name']
+        ])[0];
+        $meals = DB::table('meals')->get();
+
+
+        foreach($meals as $meal){
+            foreach($_POST[$meal->name] as $food) {
+                DB::table('diet_meal')->insert([
+                    'diet_id' => $diet->id,
+                    'meal_id' => $meal->id,
+                    'food_id' => $food
+                ]);
+            }
+        }
+
+        return redirect("browse-diet");
+
+    }
+
+    public function updateDiet($id){
+        return view('diet',[
+            'foods' => DB::table('foods')->get(),
+            'meals' => DB::table('meals')->get(),
+            'diet' => DB::table('diets')->find($id)
+        ]);
+    }
+
+    public function handleDietUpdate(){
+        $diet = DB::raw('SELECT * FROM diets where id = :id',[
+            'id' => $_POST['id']
+        ])[0];
+        DB::table('diets')->update($_POST['id'],[
+            'name' => $_POST['name'],
+            'isDiaryFree' => (int)!!$_POST['isDairyIntolerant'],
+            'isGlutenFree' => (int)!!$_POST['isGlutenIntolerant'],
+            'isVegan' => (int)!!$_POST['isVegan'],
+            'duration' => $_POST['duration'],
+            'photo' => !!$_FILES['file']['size'] ? uploadImage($_FILES['file'],[
+                'width' => 400,
+                'height' => 400,
+            ]): $diet->photo
+        ]);
+
+        $meals = DB::table('meals')->get();
+
+
+        foreach($meals as $meal){
+            foreach($_POST[$meal->name] as $food) {
+                DB::table('diet_meal')->insert([
+                    'diet_id' => $_POST['id'],
+                    'meal_id' => $meal->id,
+                    'food_id' => $food
+                ]);
+            }
+        }
+
+        return redirect("browse-diets");
     }
 }

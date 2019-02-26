@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Admin</title>
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
     <style>
         #loader{transition:all .3s ease-in-out;opacity:1;visibility:visible;position:fixed;height:100vh;width:100%;background:#fff;z-index:90000}
         #loader.fadeOut{opacity:0;visibility:hidden}
@@ -53,7 +54,8 @@
             <?php
                 $routes = [
                     [ "slug" => "users"],
-                    [ "slug" => "foods" ]
+                    [ "slug" => "foods" ],
+                    [ "slug" => "diets" ]
                 ];
             ?>
             <?php foreach($routes as $route): ?>

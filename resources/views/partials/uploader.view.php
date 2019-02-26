@@ -1,6 +1,6 @@
 <div class="file-upload">
     <div class="image-upload-wrap">
-        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+        <input class="file-upload-input" name="file" type="file" accept="image/*" />
         <div class="drag-text">
             Drag and drop a file or select add Image
         </div>

@@ -30,7 +30,7 @@ class DB{
         return static::prepare(
             "INSERT INTO {$this->table} ({$fields}) VALUES (:{$placeholders})"
             ,$data
-        )['status'];
+        );
     }
 
     public static function prepare($statement, $data){

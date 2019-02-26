@@ -15,7 +15,7 @@ $("#duration").on("change",function(){
 $('.date input').datepicker();
 
 
-$("#login-button").click(function(event){
+$("#login-button").click(function(){
     $('.form').fadeOut(500);
     $('.wrapper').addClass('form-success');
 });
@@ -304,4 +304,3 @@ AOS.init({
 
 
 })(jQuery);
-
