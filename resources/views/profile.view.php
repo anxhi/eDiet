@@ -1,7 +1,26 @@
 <?php partials('partials.header'); ?>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="/css/profile.css">
-<?php //dd($user->picture);?>
+<div class="modal fade" id="favourites" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row profile">
         <div class="col-md-3">
@@ -33,6 +52,7 @@
                         </li>
                     </ul>
                 </div>
+                <button class="toggleFavourites btn btn-outline-info">Favourites</button>
             </div>
         </div>
         <div class="col-md-9">
@@ -107,7 +127,10 @@
         </div>
     </div>
 </div>
-<br>
-<br>
 <?php partials('partials.scripts'); ?>
 <?php partials('partials.footer'); ?>
+<script>
+    // $('.toggleFavourites').on('click',function(){
+    //     $("#favourites").modal("show")
+    // })
+</script>
