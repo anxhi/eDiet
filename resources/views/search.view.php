@@ -4,7 +4,6 @@
         font-size: 12px;
     }
 </style>
-<?php dd($favs)?>
 <div class="container">
     <div class="row profile">
         <div class="container">
