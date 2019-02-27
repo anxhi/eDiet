@@ -29,7 +29,11 @@ class AdminController extends BaseController{
     }
 
     public function dashboard(){
-        return view('admin.home');
+        return view('admin.home',[
+            'users' => DB::raw('SELECT count(id) as cnt FROM users')[0]->cnt,
+            'foods' => DB::raw('SELECT count(id) as cnt FROM foods')[0]->cnt,
+            'diets' => DB::raw('SELECT count(id) as cnt FROM diets')[0]->cnt,
+        ]);
     }
 
     public function delete(){
@@ -37,7 +41,6 @@ class AdminController extends BaseController{
         return back();
     }
     public function browse(){
-//        dd($this->editable[$this->slug]);
         return view('admin.view',[
             'datas' => DB::table($this->slug)->get(),
             'fields' => $this->editable[$this->slug],
@@ -126,10 +129,29 @@ class AdminController extends BaseController{
     }
 
     public function updateDiet($id){
+        $diet = DB::table('diets')->find($id);
+        $meals = DB::table('meals')->get();
+        $foods = DB::table('foods')->get();
+
+        $selected_foods = [];
+        foreach ($meals as $meal){
+            $selected_foods[$meal->id] = [];
+        };
+
+        $diet_foods = DB::raw('select * from diet_meal where diet_id = :id',[
+            'id' => $id
+        ]);
+
+        foreach($diet_foods as $food){
+            if(!in_array($food->food_id,$selected_foods[$food->meal_id]))
+                $selected_foods[$food->meal_id][] = $food->food_id;
+        }
+
         return view('diet',[
-            'foods' => DB::table('foods')->get(),
-            'meals' => DB::table('meals')->get(),
-            'diet' => DB::table('diets')->find($id)
+            'foods' => $foods,
+            'meals' => $meals,
+            'diet' => $diet,
+            'selected_foods' => $selected_foods
         ]);
     }
 
@@ -151,6 +173,8 @@ class AdminController extends BaseController{
 
         $meals = DB::table('meals')->get();
 
+
+        DB::table('diet_meal')->delete($_POST['id'],'diet_id');
 
         foreach($meals as $meal){
             foreach($_POST[$meal->name] as $food) {

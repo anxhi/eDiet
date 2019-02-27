@@ -8,6 +8,10 @@ $(".menubutton").on("click", function() {
   $("#main").toggleClass("opened")
 })
 
+$('.scrollbottom').on('click',function(){
+    $("html, body").animate({ scrollTop: ($(document).height() - 1100) }, 1000);
+})
+
 $("#duration").on("change",function(){
   $("#days").html("Duration (days: "+$(this).val()+")")
  })
@@ -19,6 +23,20 @@ $("#login-button").click(function(){
     $('.form').fadeOut(500);
     $('.wrapper').addClass('form-success');
 });
+
+
+var picture = $("#picture");
+
+$("#upload-picture").on("click",function(){
+    picture.click();
+})
+
+picture.on("change",function(){
+    const selectedFile = this.files[0];
+    const objectURL = window.URL.createObjectURL(selectedFile);
+    $("#upload-picture").attr("src",objectURL);
+    console.log(selectedFile,objectURL)
+})
 
 AOS.init({
   duration: 800,

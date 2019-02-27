@@ -25,7 +25,7 @@
                                 <h4>Dieta me baze mishi</h4>
                             </a>
                         </div>
-                        <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Kerko Dieten Tende</a></p>
+                        <p><a href="#" class="btn btn-primary px-4 py-3 mt-3 scrollbottom">Kerko Dieten Tende</a></p>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                                 <h4>Dieta Pa Bulmete</h4>
                             </a>
                         </div>
-                        <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Kerko Dieten Tende</a></p>
+                        <p><a href="#" class="btn btn-primary px-4 py-3 mt-3 scrollbottom">Kerko Dieten Tende</a></p>
                     </div>
                 </div>
             </div>

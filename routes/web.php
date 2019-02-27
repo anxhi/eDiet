@@ -36,7 +36,7 @@ Route::get('/dashboard','AdminController@dashboard');
 /*---------------------------USER ROUTES------------------------------------*/
 Route::get('/user-data','SessionsController@dataForm');
 Route::post('/user-data','SessionsController@data');
-
+Route::post('/edit-profile','SessionsController@edit');
 
 
 /*-------------------------------CRUD------------------------------------------*/

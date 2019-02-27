@@ -5,7 +5,11 @@
     .form-check-label{
         padding-right: 20px
     }
+    .text-center.title{
+        color: black
+    }
 </style>
+<?php //dd($user_data);?>
 <h1 class="text-center title">Vendosni te dhenat tuaja</h1>
 <div class="container">
     <div class="card">
@@ -13,44 +17,44 @@
             <form action="/user-data" method="post" class="form-group" enctype="multipart/form-data">
                 <div class="slidecontainer col-sm-12">
                     <label for="bmi" id="bmi"> BMI </label><br>
-                    <input id="bmi" type="number" name="BMI" class="form-control" min="15" max="45">
+                    <input id="bmi" type="number" name="BMI" class="form-control" min="15" max="45" value="<?=$user_data->BMI ?? 15 ?>">
                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="slidercontainer col-sm-12">
-                            <label for="Weight" id="Weight"> Weight </label><br>
-                            <input id="Weight" name="Weight" type="range" min="150" max="220" value="150" class="slider">
+                            <label for="Weight" id="Weight"> Weight (<?=$user_data->weight ?? 40 ?>) </label><br>
+                            <input id="Weight" name="Weight" type="range" min="40" max="200" value="<?=$user_data->weight ?? 150 ?>" class="slider">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="slidercontainer col-sm-6">
-                            <label for="Height" id="Height"> Height </label><br>
-                            <input id="Height" name="Height" type="range" min="150" max="220" value="150" class="slider">
+                            <label for="Height" id="Height"> Height (<?=$user_data->height ?? 150 ?>) </label><br>
+                            <input id="Height" name="Height" type="range" min="150" max="220" class="slider" value="<?=$user_data->height ?? 150 ?>" >
                         </div>
                         <div class="slidercontainer col-sm-6">
-                            <label for="Chest" id="Chest"> Chest </label><br>
-                            <input id="Chest" name="Chest" type="range" min="20" max="40" value="20" class="slider">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="slidercontainer col-sm-6">
-                            <label for="Leg" id="Leg"> Leg </label><br>
-                            <input id="Leg" name="Leg" type="range" min="20" max="40" value="20" class="slider">
-                        </div>
-                        <div class="slidercontainer col-sm-6">
-                            <label for="Calf" id="Calf"> Calf </label><br>
-                            <input id="Calf" name="Calf"  type="range" min="20" max="40" value="20" class="slider">
+                            <label for="Chest" id="Chest"> Chest (<?=$user_data->chest ?? 20 ?>)</label><br>
+                            <input id="Chest" name="Chest" type="range" min="20" max="40" value="<?=$user_data->chest ?? 20 ?>" class="slider">
                         </div>
                     </div>
                     <div class="row">
                         <div class="slidercontainer col-sm-6">
-                            <label for="Waist" id="Waist"> Waist </label><br>
-                            <input id="Waist" name="Waist" type="range" min="20" max="40" value="20" class="slider">
+                            <label for="Leg" id="Leg"> Leg (<?=$user_data->leg ?? 20 ?>)</label><br>
+                            <input id="Leg" name="Leg" type="range" min="20" max="40" value="<?=$user_data->leg ?? 20 ?>" class="slider">
                         </div>
                         <div class="slidercontainer col-sm-6">
-                            <label for="Hip" id="Hip"> Hip </label><br>
-                            <input id="Hip" name="Hip" type="range" min="20" max="40" value="20" class="slider">
+                            <label for="Calf" id="Calf"> Calf (<?=$user_data->calf ?? 20 ?>)</label><br>
+                            <input id="Calf" name="Calf"  type="range" min="20" max="40" value="<?=$user_data->calf ?? 20 ?>" class="slider">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="slidercontainer col-sm-6">
+                            <label for="Waist" id="Waist"> Waist (<?=$user_data->waist ?? 20 ?>)</label><br>
+                            <input id="Waist" name="Waist" type="range" min="20" max="40" value="<?=$user_data->waist ?? 20 ?>" class="slider">
+                        </div>
+                        <div class="slidercontainer col-sm-6">
+                            <label for="Hip" id="Hip"> Hip (<?=$user_data->hip ?? 20 ?>)</label><br>
+                            <input id="Hip" name="Hip" type="range" min="20" max="40" value="<?=$user_data->hip ?? 20 ?>" class="slider">
                         </div>
                     </div>
                 </div>

@@ -22,10 +22,25 @@ class MainController extends BaseController{
     }
 
     public function profile(){
-      return view('profile');
+
+        $user = auth_user();
+        $user->data = DB::raw('SELECT * FROM user_data WHERE user_id = :id limit 1',[
+            'id' => $user->id
+        ])[0];
+
+        return view('profile',[
+            'user' => $user
+        ]);
     }
 
     public function search(){
+
+        if(!$_GET['name'] && !$_GET['duration'] && !$_GET['category']){
+            return view('search',[
+                'results' => DB::table('diets')->get()
+            ]);
+        }
+
         $categories = [
             'isVegan', 'isDiaryFree', 'isGlutenFree'
         ];

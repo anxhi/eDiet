@@ -14,8 +14,10 @@
         <?php endif;?>
 
         <div class="form-group">
+            <?php $name = errors('name')?>
             <label for="name"> Name</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="<?=($diet ? $diet->name: "")?>">
+            <input type="text" class="form-control <?=!!$name ? 'is-invalid': ''?>" name="name" id="name" placeholder="Name" value="<?=($diet ? $diet->name: "")?>">
+            <div class="invalid-feedback"><?=implode('<br>',$name)?></div>
         </div>
 
         <div class="form-group">
@@ -41,11 +43,13 @@
             <?php foreach($meals as $meal): ?>
                 <div class="card col-sm-4" style="cursor:pointer">
                     <div class="card-body text-center" style="color:black">
-                        <?=$meal->name?>
+                        <?=ucfirst($meal->name)?>
                         <div class="form">
                             <select name="<?=$meal->name?>[]" class="selectpicker" multiple data-live-search="true">
                                 <?php foreach($foods as $food):?>
-                                    <option value="<?=$food->id?>" data-tokens="<?=$meal->id?>-<?=$food->name?>"><?=$food->name?></option>
+                                    <option value="<?=$food->id?>" data-tokens="<?=$meal->id?>-<?=$food->name?>" <?= in_array($food->id,$selected_foods[$meal->id]) ? 'selected': '' ?> >
+                                        <?=$food->name?>
+                                    </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
