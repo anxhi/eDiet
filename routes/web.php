@@ -66,6 +66,7 @@ Route::post('/update-diet','AdminController@handleDietUpdate');
 
 /*-------------------------------SEARCH------------------------------------------*/
 Route::get('/search-results','MainController@search');
+Route::post('/favourite-toggle','MainController@toggle');
 
 
 

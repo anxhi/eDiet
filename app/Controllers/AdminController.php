@@ -37,6 +37,11 @@ class AdminController extends BaseController{
     }
 
     public function delete(){
+        if($_POST['logout']){
+            DB::table('users')->delete($_POST['id']);
+            session_destroy();
+            return redirect('');
+        }
         DB::table($_POST['type'])->delete($_POST['id']);
         return back();
     }
@@ -124,7 +129,7 @@ class AdminController extends BaseController{
             }
         }
 
-        return redirect("browse-diet");
+        return redirect("browse-diets");
 
     }
 

@@ -9,16 +9,12 @@
         color: black
     }
 </style>
-<?php //dd($user_data);?>
+
 <h1 class="text-center title">Vendosni te dhenat tuaja</h1>
 <div class="container">
     <div class="card">
         <div class="card-body">
             <form action="/user-data" method="post" class="form-group" enctype="multipart/form-data">
-                <div class="slidecontainer col-sm-12">
-                    <label for="bmi" id="bmi"> BMI </label><br>
-                    <input id="bmi" type="number" name="BMI" class="form-control" min="15" max="45" value="<?=$user_data->BMI ?? 15 ?>">
-                </div>
                 <div class="container">
                     <div class="row">
                         <div class="slidercontainer col-sm-12">

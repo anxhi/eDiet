@@ -13,9 +13,11 @@ class DB{
         static::$connection = $db;
     }
 
-    public static function raw($statement,$data=[]){
-
-        return static::prepare($statement,$data)['statement']->fetchAll(static::FETCH_TYPE) ?? [];
+    public static function raw($statement,$data=[],$fetch=true){
+        if($fetch){
+            return static::prepare($statement,$data)['statement']->fetchAll(static::FETCH_TYPE) ?? [];
+        }
+        return static::prepare($statement,$data)['statement'];
     }
 
     public static function table($table){
@@ -55,7 +57,7 @@ class DB{
     }
 
     public function delete($id,$column=null){
-        return static::prepare("DELETE FROM {$this->table} WHERE ".$column??'id'." = :id",['id' => $id])['status'];
+        return static::prepare("DELETE FROM {$this->table} WHERE ".($column ?? 'id'." = :id"),['id' => $id])['status'];
     }
 
     public function update($id,$data){

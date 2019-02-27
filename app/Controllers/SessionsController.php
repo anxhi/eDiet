@@ -37,15 +37,20 @@ class SessionsController extends BaseController{
             'birthday' => 'required',
         ]);
 
-        DB::table("users")->insert([
+        $data = [
             'name' => $_POST['name'],
             'username' => $_POST['username'],
             'password' => password_hash($_POST["password"],1),
             'dairyfree' => (int)!!$_POST['dairyfree'],
             'vegan' => (int)!!$_POST['vegan'],
             'glutenfree' => (int)!!$_POST['glutenfree'],
-            'picture' => !!$_FILES['file']['size'] ? uploadImage($_FILES['file'],['width' => 350,'height' => 350]) : null
-        ]);
+        ];
+
+        if(!!$_FILES['file']['size']){
+            $data['picture'] = uploadImage($_FILES['file'],['width' => 350,'height' => 350]);
+        }
+
+        DB::table("users")->insert($data);
 
         $user = DB::raw('SELECT * FROM users where username = :username limit 1',[
             'username' => $_POST['username']
@@ -68,7 +73,7 @@ class SessionsController extends BaseController{
 
     public function data(){
         DB::table('user_data')->insert([
-            'BMI' => $_POST['BMI'],
+            'BMI' => ((int)$_POST['Weight']/(int)$_POST['Height']*(int)$_POST['Height']),
             'user_id' => auth_user()->id,
             'weight' => $_POST['Weight'],
             'height' => $_POST['Height'],

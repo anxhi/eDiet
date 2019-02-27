@@ -1,21 +1,19 @@
 <?php partials('partials.header'); ?>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="/css/profile.css">
-<div class="modal fade" id="favourites" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="Delete Modal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure ?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-                ...
-            </div>
+            <div class="modal-body">...</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button onclick="deleteForm();" type="button" class="btn btn-danger">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>
@@ -123,8 +121,71 @@
                         <button type="submit" class="btn btn-outline-primary">Submit</button>
                     </div>
                 </form>
+                <form action="/delete" method="post">
+                    <input type="hidden" name="type" value="users">
+                    <input type="hidden" name="logout" value="true">
+                    <input type="hidden" name="id" value="<?=$user->id?>">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-danger">Deactivate</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
+    <div class="row profile">
+        <?php foreach($favs as $result):?>
+                <div class="card" style="margin: 20px">
+                    <div class="card-header">
+                        <?='Spans '.$result->duration.' days'?>
+                    </div>
+                    <div style="padding-left: 20px">
+                        <img src="<?=$result->photo?>" style="border-radius:50%;" alt="" height="100" width="100">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" style="margin-bottom: 0"><?=ucfirst($result->name)?></h5>
+                        <?php if($result->isVegan):?>
+                            <span class="card-text"> ⋅ Vegan</span>
+                        <?php endif;?>
+                        <?php if($result->isGlutenFree):?>
+                            <span class="card-text"> ⋅ Gluten Free</span>
+                        <?php endif;?>
+                        <?php if($result->isDiaryFree):?>
+                            <span class="card-text"> ⋅ Dairy Free</span>
+                        <?php endif;?>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Breakfast</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Lunch</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Dinner</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <?php foreach($result->data['breakfast'][0] as $breakfast): ?>
+                                    <p class="card-text"><?=$breakfast->name?></p>
+                                <?php endforeach;?>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <?php foreach($result->data['lunch'][0] as $breakfast): ?>
+                                    <p class="card-text"><?=$breakfast->name?></p>
+                                <?php endforeach;?>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <?php foreach($result->data['dinner'][0] as $breakfast): ?>
+                                    <p class="card-text"><?=$breakfast->name?></p>
+                                <?php endforeach;?>
+                            </div>
+                        </div>
+                        <?php if(!!auth_user()): ?>
+                            <button id="<?=$result->id?>" class="btn btn-primary toggle-fav"><?= in_array($result->id, $favs) ? 'unfavourite' : 'favourite' ?></button>
+                        <?php endif;?>
+                    </div>
+                </div>
+            <?php endforeach;?>
     </div>
 </div>
 <?php partials('partials.scripts'); ?>

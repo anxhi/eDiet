@@ -41,7 +41,7 @@
                 </div>
                 <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
                     <div class="text mt-md-5">
-                        <h1 class="mb-4">Ne e duam ushqimin <br> Delicious Foods</h1>
+                        <h1 class="mb-4">Ne e duam ushqimin</h1>
                         <p>Zhgjidhni dieten tuaj sot dhe ne qofte se jeni alergjik ngaj disa ushqimeve</p>
                         <div class="thumb mt-4 mb-3 d-flex">
                             <a href="#" class="thumb-menu pr-md-4 text-center">
