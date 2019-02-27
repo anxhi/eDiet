@@ -13,6 +13,17 @@
         .invalid-feedback{
             display: block !important;
         }
+        .login-btn{
+            background: #f34949 !important;
+            border: 1px solid #f34949 !important;
+            color: #fff !important;
+        }
+        .login-btn:hover{
+            background: transparent !important;
+            border: 1px solid #f34949 !important;
+            color: #f34949 !important;
+        }
+
     </style>
     <link href="/style.css" rel="stylesheet">
 </head>
@@ -43,16 +54,16 @@
             </div>
             <div class="form-group">
                 <div class="peers ai-c jc-sb fxw-nw">
+<!--                    <div class="peer">-->
+<!--                        <div class="checkbox checkbox-circle checkbox-info peers ai-c">-->
+<!--                            <input type="checkbox" id="inputCall1" name="inputCheckboxesCall" class="peer">-->
+<!--                            <label for="inputCall1" class="peers peer-greed js-sb ai-c">-->
+<!--                                <span class="peer peer-greed">Remember Me</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="peer">
-                        <div class="checkbox checkbox-circle checkbox-info peers ai-c">
-                            <input type="checkbox" id="inputCall1" name="inputCheckboxesCall" class="peer">
-                            <label for="inputCall1" class="peers peer-greed js-sb ai-c">
-                                <span class="peer peer-greed">Remember Me</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="peer">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="btn btn-primary login-btn" >Login</button>
                     </div>
                 </div>
                 <div class="invalid-feedback"><?=implode('<br>',errors('login'))?></div>

@@ -30,7 +30,7 @@ class DB{
         return static::prepare(
             "INSERT INTO {$this->table} ({$fields}) VALUES (:{$placeholders})"
             ,$data
-        )['status'];
+        );
     }
 
     public static function prepare($statement, $data){
@@ -54,8 +54,8 @@ class DB{
         return DB::raw("SELECT * FROM {$this->table} ");
     }
 
-    public function delete($id){
-        return static::prepare("DELETE FROM {$this->table} WHERE id = :id",['id' => $id])['status'];
+    public function delete($id,$column=null){
+        return static::prepare("DELETE FROM {$this->table} WHERE ".$column??'id'." = :id",['id' => $id])['status'];
     }
 
     public function update($id,$data){

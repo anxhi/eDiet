@@ -32,13 +32,19 @@ Route::get('/dashboard','AdminController@dashboard');
 Route::post('/login','AdminController@login');
 Route::get('/admin','AdminController@loginForm');
 Route::get('/dashboard','AdminController@dashboard');
-Route::get('/diet','DietController@index');
+
+/*---------------------------USER ROUTES------------------------------------*/
+Route::get('/user-data','SessionsController@dataForm');
+Route::post('/user-data','SessionsController@data');
+Route::post('/edit-profile','SessionsController@edit');
+
 
 /*-------------------------------CRUD------------------------------------------*/
 
 $routes = [
     [ "slug" => "users" ],
     [ "slug" => "foods" ],
+    [ "slug" => "diets" ],
 ];
 
 foreach($routes as $route){
@@ -48,8 +54,19 @@ foreach($routes as $route){
     Route::post("/create-{$route["slug"]}","AdminController@add");
     Route::post("/update-{$route["slug"]}","AdminController@update");
 }
-
 Route::post('/delete','AdminController@delete');
+
+/*-------------------------------DIETS------------------------------------------*/
+
+Route::get('/create-diets','AdminController@diet');
+Route::post('/add-diet','AdminController@createDiet');
+Route::get('/create-diets/{id}','AdminController@updateDiet');
+Route::post('/update-diet','AdminController@handleDietUpdate');
+
+
+/*-------------------------------SEARCH------------------------------------------*/
+Route::get('/search-results','MainController@search');
+
 
 
 /*-------------------------------TESTS------------------------------------------*/

@@ -14,7 +14,7 @@
         <div class="card-body">
             <form action="/signup" method="post" class="form-group no-validate" novalidate enctype="multipart/form-data">
                 <div class="form-group">
-                    <img src="/images/default-picture.jpg" class="rounded-circle hover-effect" width="200" height="200" id="profile-picture" />
+                    <img src="/images/default-picture.jpg" class="rounded-circle hover-effect" width="200" height="200" id="upload-picture" />
                 </div>
                 <input type="file" name="picture" id="picture" style="display:none">
                 <label for="name"> Profile Picture (click the avatar to upload a new image)</label>
