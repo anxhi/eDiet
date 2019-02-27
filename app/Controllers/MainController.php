@@ -34,10 +34,17 @@ class MainController extends BaseController{
     }
 
     public function search(){
-
+        $favs = DB::raw(
+             'select diets.id, diet_id from diets
+                    left join favourite_diets on favourite_diets.diet_id = diets.id
+                    where user_id = :user'
+        ,[
+            'user' => auth_user()->id
+        ])[0];
         if(!$_GET['name'] && !$_GET['duration'] && !$_GET['category']){
             return view('search',[
-                'results' => DB::table('diets')->get()
+                'results' => DB::table('diets')->get(),
+                'favs' => $favs
             ]);
         }
 
@@ -57,7 +64,8 @@ class MainController extends BaseController{
             'duration' => $_GET['duration'],
         ]);
         return view('search',[
-            'results' => $results
+            'results' => $results,
+            'favs' => $favs
         ]);
     }
 }

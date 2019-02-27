@@ -38,6 +38,10 @@ picture.on("change",function(){
     console.log(selectedFile,objectURL)
 })
 
+$('.toggleFav').on('click', function(){
+    $.ajax('/toggleFav')
+})
+
 AOS.init({
   duration: 800,
   easing: 'slide'
